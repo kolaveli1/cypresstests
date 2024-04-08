@@ -1,15 +1,10 @@
 /// <reference types="cypress"/>
 
-import Twilio from "./twilio";
 import 'cypress-plugin-stripe-elements';
 
 it('passes', () => {
-
-    const twilio = new Twilio();
     const timewait = 300;
 
-
-    cy.intercept('POST', 'https://test-dev.micromojo.app/login/verify').as('apiCall');
     cy.visit('https://mobile.micromojo.app/')
 
     cy.contains('Buy Lovegame').click()
