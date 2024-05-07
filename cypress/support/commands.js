@@ -39,3 +39,4 @@ Cypress.Commands.add('fillElementsInput', (field, value) => {
       cy.wrap(stripeIframe.contentDocument.body).find(`input[name="${elementName}"]`).click().type(text);
     });
   });
+ 

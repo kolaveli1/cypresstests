@@ -20,7 +20,7 @@ it('passes', () => {
 
 
     cy.get('.send-btn').click()
-    cy.wait(10000)
+    cy.wait(13000)
 
     cy.get('body').then(($body) => {
         if ($body.find('.opacity-20').css('opacity') === '0.2') {
@@ -52,7 +52,7 @@ it('passes', () => {
             cy.get('.footer-right-btn').click()
             cy.wait(timewait)
             cy.get('#card-element').within(() => {
-                cy.fillElementsInput('cardNumber', '4242424242424242');
+                cy.fillElementsInput('cardNumber', '4242424242424242', {delay:100});
             });
             cy.get('input[name="cardHolderName"]').type("Tester")
             cy.typeInStripeElement('exp-date', '1225');
